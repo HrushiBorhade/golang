@@ -62,6 +62,26 @@ func main() {
 		fmt.Println("Weekend")
 	}
 
+	for i := 0; i < 5; i++ {
+		fmt.Printf("For Loop : Value of i = %d\n", i)
+	}
+
+	counter := 0
+	for counter < 3 {
+		fmt.Printf("Simulating while loop using for with conditional statement : counter = %d\n", counter)
+		counter++
+	}
+
+	iterations := 0
+
+	for {
+		if iterations > 3 {
+			break
+		}
+		fmt.Printf("Simulating infinite while loop using for with base condition: itterations =  %d\n", iterations)
+		iterations++
+	}
+
 }
 
 func add(a int, b int) int {
