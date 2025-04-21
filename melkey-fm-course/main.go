@@ -36,4 +36,16 @@ func main() {
 	)
 	fmt.Printf("Mon - %d\nTue - %d\nWed - %d\n", Monday, Tuesday, Wednesday)
 
+	fmt.Println("Addition Result of 3 and 4 = ", add(3, 4))
+
+	sum, product := calcSumAndProduct(4, 5)
+	fmt.Printf("Sum of 4 and 5 = %d and product of 4 and 5 = %d\n", sum, product)
+}
+
+func add(a int, b int) int {
+	return a + b
+}
+
+func calcSumAndProduct(a, b int) (int, int) {
+	return a + b, a * b
 }
