@@ -4,6 +4,11 @@ import (
 	"fmt"
 )
 
+type Person struct {
+	Name string
+	Age  int
+}
+
 func main() {
 	fmt.Println("Hello World!")
 
@@ -129,6 +134,44 @@ func main() {
 
 	delete(capitalCities, "UK")
 	fmt.Println("CapitalCities map after delete UK", capitalCities)
+
+	//Struct
+	person := Person{
+		Name: "Hrushi",
+		Age:  22,
+	}
+	fmt.Printf("Value of person %+v\n", person)
+
+	pet := struct {
+		name string
+	}{
+		name: "Bruno",
+	}
+	fmt.Printf("Anonymous Pet struct %+v\n", pet)
+
+	type Address struct {
+		City    string
+		Country string
+	}
+
+	type Contact struct {
+		Name    string
+		Address Address
+		Phone   string
+	}
+
+	address := Address{
+		City:    "Pune",
+		Country: "India",
+	}
+
+	contact := Contact{
+		Name:    "Hrushi",
+		Address: address,
+		Phone:   "123456789",
+	}
+
+	fmt.Printf("Nested struct contact: %+v\n", contact)
 }
 
 func add(a int, b int) int {
