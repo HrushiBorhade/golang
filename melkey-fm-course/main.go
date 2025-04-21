@@ -27,4 +27,13 @@ func main() {
 
 	fmt.Printf("Default Value\n defaultInt: %d \n defaultFloat: %f \n defaultString: %s \n defaultBoolean: %t \n", defaultInt, defaultFloat, defaultString, defaultBoolean)
 
+	//Constants and Enums
+	const PI = 3.14
+	const (
+		Monday = iota + 1
+		Tuesday
+		Wednesday
+	)
+	fmt.Printf("Mon - %d\nTue - %d\nWed - %d\n", Monday, Tuesday, Wednesday)
+
 }
