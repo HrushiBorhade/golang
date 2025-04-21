@@ -82,7 +82,7 @@ func main() {
 		iterations++
 	}
 
-	// Arrays and Slices
+	// Arrays
 
 	numbers := [5]int{10, 20, 30, 40, 50}
 	fmt.Printf("Array of numbers = %v\n", numbers)
@@ -93,9 +93,23 @@ func main() {
 		{1, 2, 3},
 		{4, 5, 6},
 	}
-
 	fmt.Printf("Matrix of numbers = %v\n", matrix)
 
+	// Slices
+	allNumbers := numbers[:]
+	firstThree := numbers[0:3]
+	fmt.Printf("allNumbers slice = %v\n", allNumbers)
+	fmt.Printf("Append numbers 60 to all numbers = %v\n", append(allNumbers, 60))
+	fmt.Printf("Slice of first 3 elements of numbers = %v\n", firstThree)
+
+	fruits := []string{"Mango", "Apple"}
+	fmt.Printf("Slice of Fruits = %v\n", fruits)
+	fmt.Printf("Append orange, pineapple, papaya to Slice of Fruits = %v\n", append(fruits, "Orange", "Pineapple", "Papaya"))
+
+	fmt.Println("Itterating numbers with range")
+	for index, value := range numbers {
+		fmt.Printf("index %d and value %d\n", index, value)
+	}
 }
 
 func add(a int, b int) int {
