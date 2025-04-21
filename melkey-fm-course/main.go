@@ -110,6 +110,25 @@ func main() {
 	for index, value := range numbers {
 		fmt.Printf("index %d and value %d\n", index, value)
 	}
+
+	// Map
+	capitalCities := map[string]string{
+		"USA":   "Washington DC",
+		"India": "Delhi",
+		"UK":    "London",
+	}
+
+	fmt.Println("Capital of India is ", capitalCities["India"])
+
+	capital, exists := capitalCities["Germany"]
+	if exists {
+		fmt.Println("Capital of India is ", capital)
+	} else {
+		fmt.Println("Capital of Germany does not exist in our map")
+	}
+
+	delete(capitalCities, "UK")
+	fmt.Println("CapitalCities map after delete UK", capitalCities)
 }
 
 func add(a int, b int) int {
