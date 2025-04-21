@@ -136,12 +136,6 @@ func main() {
 	fmt.Println("CapitalCities map after delete UK", capitalCities)
 
 	//Struct
-	person := Person{
-		Name: "Hrushi",
-		Age:  22,
-	}
-	fmt.Printf("Value of person %+v\n", person)
-
 	pet := struct {
 		name string
 	}{
@@ -172,8 +166,29 @@ func main() {
 	}
 
 	fmt.Printf("Nested struct contact: %+v\n", contact)
+
+	//Pointers
+	person := Person{
+		Name: "Hrushi",
+		Age:  22,
+	}
+	fmt.Printf("Value of person's name before update fn call %+v\n", person.Name)
+	updatePersonName(&person, "Hrushikesh")
+	fmt.Printf("Value of person's name after update fn call and before method call %+v\n", person.Name)
+	person.updateName("Rishi")
+	fmt.Printf("Value of person's name after update fn call and after method call %+v\n", person.Name)
+
 }
 
+func updatePersonName(p *Person, newName string) {
+	p.Name = newName
+	fmt.Printf("inside updatePersonName function scope value of name = %s\n", p.Name)
+}
+
+func (p *Person) updateName(newName string) {
+	p.Name = newName
+	fmt.Printf("inside updateName method scope value of name = %s\n", p.Name)
+}
 func add(a int, b int) int {
 	return a + b
 }
