@@ -11,7 +11,7 @@ func main() {
 	var name string = "Hrushi"
 	fmt.Printf("Hey there! I am %s\n", name)
 
-	age := 27
+	age := 22
 	fmt.Printf("I am %d years old\n", age)
 
 	var city string = "Pune"
@@ -40,6 +40,28 @@ func main() {
 
 	sum, product := calcSumAndProduct(4, 5)
 	fmt.Printf("Sum of 4 and 5 = %d and product of 4 and 5 = %d\n", sum, product)
+
+	//Conditional Statement
+
+	if age >= 18 {
+		fmt.Printf("You are %d old so you are an adult\n", age)
+	} else if age <= 13 {
+		fmt.Printf("You are %d old so you are a teenager\n", age)
+	} else {
+		fmt.Printf("You are %d old so you are a child\n", age)
+	}
+
+	day := "Sunday"
+
+	switch day {
+	case "Monday", "Tuesday":
+		fmt.Println("Start of the week")
+	case "Wednesday", "Thursday", "Friday":
+		fmt.Println("Mid week")
+	default:
+		fmt.Println("Weekend")
+	}
+
 }
 
 func add(a int, b int) int {
