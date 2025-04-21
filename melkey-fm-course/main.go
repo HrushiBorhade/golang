@@ -7,7 +7,7 @@ import (
 func main() {
 	fmt.Println("Hello World!")
 
-	//Variables
+	// Variables
 	var name string = "Hrushi"
 	fmt.Printf("Hey there! I am %s\n", name)
 
@@ -19,7 +19,7 @@ func main() {
 	country := "India"
 	fmt.Printf("I am from %s, %s\n", city, country)
 
-	//Zero Values
+	// Zero Values
 	var defaultInt int
 	var defaultFloat float64
 	var defaultString string
@@ -27,7 +27,7 @@ func main() {
 
 	fmt.Printf("Default Value\n defaultInt: %d \n defaultFloat: %f \n defaultString: %s \n defaultBoolean: %t \n", defaultInt, defaultFloat, defaultString, defaultBoolean)
 
-	//Constants and Enums
+	// Constants and Enums
 	const PI = 3.14
 	const (
 		Monday = iota + 1
@@ -41,8 +41,7 @@ func main() {
 	sum, product := calcSumAndProduct(4, 5)
 	fmt.Printf("Sum of 4 and 5 = %d and product of 4 and 5 = %d\n", sum, product)
 
-	//Conditional Statement
-
+	// Conditional Statement
 	if age >= 18 {
 		fmt.Printf("You are %d old so you are an adult\n", age)
 	} else if age <= 13 {
@@ -62,6 +61,7 @@ func main() {
 		fmt.Println("Weekend")
 	}
 
+	// Loops
 	for i := 0; i < 5; i++ {
 		fmt.Printf("For Loop : Value of i = %d\n", i)
 	}
@@ -81,6 +81,20 @@ func main() {
 		fmt.Printf("Simulating infinite while loop using for with base condition: itterations =  %d\n", iterations)
 		iterations++
 	}
+
+	// Arrays and Slices
+
+	numbers := [5]int{10, 20, 30, 40, 50}
+	fmt.Printf("Array of numbers = %v\n", numbers)
+	fmt.Printf("Length of Array of numbers = %d\n", len(numbers))
+	fmt.Printf("First Element in Array of numbers = %d\n", numbers[0])
+
+	matrix := [2][3]int{
+		{1, 2, 3},
+		{4, 5, 6},
+	}
+
+	fmt.Printf("Matrix of numbers = %v\n", matrix)
 
 }
 
