@@ -1,6 +1,7 @@
 package main
 
 import (
+	"flag"
 	"fmt"
 	"net/http"
 	"time"
@@ -9,21 +10,25 @@ import (
 )
 
 func main() {
+
+	var port int
+	flag.IntVar(&port, "port", 8080, "Go Backend Server Port")
+	flag.Parse()
+
 	app, err := app.NewApplication()
 	if err != nil {
 		panic(err)
 	}
 
-	app.Logger.Println("App is Running ✅")
-
 	http.HandleFunc("/health", HealthCheck)
 
 	server := &http.Server{
-		Addr:         ":8080",
+		Addr:         fmt.Sprintf(":%d", port),
 		IdleTimeout:  time.Minute,
 		ReadTimeout:  10 * time.Second,
 		WriteTimeout: 30 * time.Second,
 	}
+	app.Logger.Printf("App is Running on port : %d ✅\n", port)
 
 	err = server.ListenAndServe()
 	if err != nil {
@@ -32,5 +37,5 @@ func main() {
 }
 
 func HealthCheck(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprintf(w, "Status is available\n")
+	fmt.Fprintf(w, "Server is up and running ✅\n")
 }
