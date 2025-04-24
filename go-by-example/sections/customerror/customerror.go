@@ -1,4 +1,4 @@
-package error_test
+package customerror
 
 import (
 	"errors"
