@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"math"
 	"math/cmplx"
 	"math/rand"
 )
@@ -28,6 +29,20 @@ var (
 	Complex complex128 = cmplx.Sqrt(-5 + 12i)
 )
 
+func sqrt(x float64) string {
+	if x < 0 {
+		return sqrt(-x) + "i"
+	}
+	return fmt.Sprint(math.Sqrt(x))
+}
+
+func pow(x, n, lim float64) float64 {
+	if v := math.Pow(x, n); v < lim {
+		return v
+	}
+	return lim
+}
+
 func main() {
 	fmt.Println("My fav number is", rand.Intn(10))
 	fmt.Println(add(42, 13))
@@ -45,4 +60,28 @@ func main() {
 
 	const World = "世界"
 	fmt.Println("Hello", World)
+
+	sum := 0
+	for i := 0; i < 10; i++ {
+		sum += i
+	}
+	fmt.Println("sum", sum)
+
+	sum2 := 1
+	for sum2 < 100 {
+		sum2 += sum2
+	}
+	fmt.Println("sum2", sum2)
+
+	sum3 := 1
+	for sum3 < 1000 {
+		sum3 += sum3
+	}
+
+	fmt.Println(sqrt(2), sqrt(-4))
+
+	fmt.Println(
+		pow(3, 2, 10),
+		pow(3, 3, 20),
+	)
 }
